@@ -1,0 +1,139 @@
+  /* *{
+    border: red 1px solid;
+  } */
+body{
+  min-height: 100vh;
+  background-image: url(../img/makeup.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1{
+  font-size: 10rem;
+  font-family: 'EB Garamond', serif;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+h4{
+  font-family: 'EB Garamond', sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin-top: 50px;
+  padding: 1.5rem;
+}
+span{
+  color:rgb(125, 73, 67);
+  font-family: 'Roboto Flex', sans-serif;
+  font-weight: 100;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  margin-top: auto;
+}
+select, .submit {
+  font-family: 'EB Garamond', serif;
+  background: rgba(255, 191, 197, .9);
+  color: black;
+  border: 1px solid;
+  padding: 8px;
+  border-radius: 9px;
+  font-size: 1.25rem;
+}
+option{
+  font-family: 'EB Garamond', serif;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.image{
+  height: auto;
+  margin: 20px 0;
+  text-align: center;
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 20px;
+  background-color: white;
+  border: 4px solid rgb(125, 73, 67);
+}
+.hidden{
+  display: none;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button{
+  text-align: center;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+.header{
+  text-align: center;
+  background-color: rgba(239, 230, 229, .8);
+  border-radius: 50px;
+  margin-top: 20px;
+  padding: 50px;
+  padding-top: 0;
+}
+section{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+span{
+  padding-top: 1000px;
+  margin-top: 100px;
+}
+.productName{
+  font-style: italic;
+  font-weight: 100;
+}
+.productImage{
+  max-height: 22vh;
+}
+button{
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, .3);
+  color: rgb(125, 73, 67);
+  font-weight: 400px;
+  border: 1px solid rgb(221, 115, 115);
+  padding: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+@media only screen and (max-width: 925px){
+  html{
+    background-image: url(../img/makeup2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 186, 187, .5);
+  }
+  body{
+    background-image: none;
+  }
+  .header{
+    background-color: rgba(239, 230, 229, 0);
+  }
+  h1{
+    font-size: 6rem;
+  }
+  span{
+    font-size: 1rem;
+  }
+  h4{
+    background-color: rgba(239, 230, 229, .8);
+    border-radius: 20px;
+    text-align: center;
+    word-wrap: break-word;
+  }
+  button{
+    font-size: .7rem;
+  }
+  .image{
+    width: 50%;
+  }
+}
