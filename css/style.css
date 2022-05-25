@@ -49,7 +49,7 @@ a {
 }
 .image{
   height: auto;
-  margin: 20px 0;
+  margin: 0 auto;
   text-align: center;
   margin-top: 5rem;
   padding: 2rem;
@@ -62,10 +62,10 @@ a {
 }
 .flex{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
-.button{
+.dropdown{
   text-align: center;
   border-radius: 50px;
   margin-top: 10px;
@@ -95,16 +95,17 @@ span{
 .productImage{
   max-height: 22vh;
 }
-button{
+.previous, .next{
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, .3);
-  color: rgb(125, 73, 67);
-  font-weight: 400px;
-  border: 1px solid rgb(221, 115, 115);
-  padding: 10px;
-  font-size: 1.5rem;
-  text-align: center;
+  background-color: rgba(242, 219, 219, .7);
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,.5);
+  padding: 8px 16px;
 }
+.previous:hover, .next:hover{
+  background-color: rgba(180,99,72,.7);
+}
+
 @media only screen and (max-width: 925px){
   html{
     background-image: url(../img/makeup2.png);
@@ -130,7 +131,7 @@ button{
     text-align: center;
     word-wrap: break-word;
   }
-  button{
+  .previous, .next{
     font-size: .7rem;
   }
   .image{

@@ -34,6 +34,8 @@ document.querySelector('.submit').addEventListener('click', function (){
   getProductImage(product, urlChoice)
   document.querySelector('.image').classList.remove('hidden')
   document.querySelector('h4').classList.add('hidden')
+  document.querySelector('.previous').classList.remove('hidden')
+  document.querySelector('.next').classList.remove('hidden')
 })
 
 const getProductImage = (value, urlChoice) => {
@@ -45,9 +47,6 @@ const getProductImage = (value, urlChoice) => {
       document.querySelector('.productImage').src = data[i].image_link
       document.querySelector('.productLink').href = data[i].product_link
     }
-    // document.querySelector('.productName').innerText = data[i].name
-    // document.querySelector('.productImage').src = data[i].image_link
-    // document.querySelector('.productLink').href = data[i].product_link
   })
 }
 
