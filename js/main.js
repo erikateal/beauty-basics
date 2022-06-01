@@ -1,25 +1,19 @@
 let product;
-let urlChoice;
-let allProducts = [];
-let productCategories = {
+let allProducts = []; // stores the API in an array
+let productCategories = { // stores the product type in an object
   // "example": [
   //   {label:"product1"}
   // ]
 };
-let selectedProductCategory = [];
+let selectedProductCategory = []; 
 let productArr = [];
-let productName = [];
-let productImage = [];
-let productLink = [];
-const url = `/js/products.json`;
-// const url = `https://makeup-api.herokuapp.com/api/v1/products.json`;
-let selectedProductIndex = 0;
+const url = `/js/products.json`; // cached API
+let selectedProductIndex = 0; // needed to loop through the contents of the selected product array
 
 fetch(url)
   .then(res => res.json()) //parse response as JSON
   .then(data => {
-    // console.log(data)
-    allProducts = data
+    allProducts = data // stores the API in an array
     for(let i = 0; i < data.length; i++){
       productArr.push(data[i].product_type); // pushing every element in the product type to an array
       if (productCategories[data[i].product_type] === undefined) {
@@ -45,44 +39,39 @@ fetch(url)
 const selectProductCategory = document.querySelector('.productType');
 selectProductCategory.addEventListener('change', event => {
   product = event.target.value;
-  // urlChoice = `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${product}`;
   selectedProductCategory = productCategories[product];
-  // console.log(product);
 })
 
 document.querySelector('.submit').addEventListener('click', function (){
-  // getProductImage(product, urlChoice);
-  updateProduct();
+  updateProduct(); // manipulates the DOM
   document.querySelector('.image').classList.remove('hidden');
   document.querySelector('h4').classList.add('hidden');
   document.querySelector('.previous').classList.remove('hidden');
   document.querySelector('.next').classList.remove('hidden');
 })
 
-function updateProduct(index = 0) {
+function updateProduct(index = 0) { // selects info for product in index[0] of the array
   document.querySelector('.productName').innerText = selectedProductCategory[index].name;
   document.querySelector('.productImage').src = selectedProductCategory[index].image_link;
   document.querySelector('.productLink').href = selectedProductCategory[index].product_link;
   selectedProductIndex = index;
 }
 
-    document.querySelector('.previous').addEventListener('click', previousProduct)
-	function previousProduct(e){
-		e.preventDefault();
-		// count--
-		// if (count < 0) count = data.length - 1;
-    let currentIndex = selectedProductIndex;
-    currentIndex--
-		if (currentIndex < 0) currentIndex = selectedProductCategory.length - 1;
-    updateProduct(currentIndex);
-	};
-
-	document.querySelector('.next').addEventListener('click', nextProduct)
-	function nextProduct(e){
+  document.querySelector('.next').addEventListener('click', nextProduct)
+	function nextProduct(e){ // increments through the array when > is clicked
 		e.preventDefault();
     let currentIndex = selectedProductIndex;
 		currentIndex++
-		if (currentIndex > selectedProductCategory.length - 1) currentIndex = 0;
+		if (currentIndex > selectedProductCategory.length - 1) currentIndex = 0; // keeps index from being a negative value
+    updateProduct(currentIndex);
+	};
+
+  document.querySelector('.previous').addEventListener('click', previousProduct)
+	function previousProduct(e){ // decrements through the array when < is clicked
+		e.preventDefault();
+    let currentIndex = selectedProductIndex;
+    currentIndex--
+		if (currentIndex < 0) currentIndex = selectedProductCategory.length - 1;
     updateProduct(currentIndex);
 	};
 
