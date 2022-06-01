@@ -62,7 +62,7 @@ function updateProduct(index = 0) { // selects info for product in index[0] of t
 		e.preventDefault();
     let currentIndex = selectedProductIndex;
 		currentIndex++
-		if (currentIndex > selectedProductCategory.length - 1) currentIndex = 0; // keeps index from being a negative value
+		if (currentIndex > selectedProductCategory.length - 1) currentIndex = 0;
     updateProduct(currentIndex);
 	};
 
